@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: captureorder
+  name: capture-order-api
+  namespace: app1
 spec:
   selector:
       matchLabels:
-        app: captureorder
-  replicas: 2
+        app: capture-order-api
   template:
       metadata:
         labels:
-            app: captureorder
+            app: capture-order-api
       spec:
         containers:
-        - name: captureorder
-          image: uniqueacrname.azurecr.io/captureorder # replace with your own repository
+        - name: capture-order-api
+          image: mdpcarpcc.azurecr.io/captureorder # replace with your own repository
           imagePullPolicy: Always
           readinessProbe:
             httpGet:
@@ -26,14 +26,14 @@ spec:
               path: /healthz
           resources:
             requests:
-              memory: "64Mi"
-              cpu: "100m"
+              memory: "1"
+              cpu: "150Mi"
             limits:
-              memory: "128Mi"
-              cpu: "500m"
+              memory: "200Mi"
+              cpu: "1"
           env:
           - name: TEAMNAME
-            value: 'placeholder' # will be patched at deployment time by value of 'teamName' in the variable group
+            value: 'PDM-IS-COOL' # will be patched at deployment time by value of 'teamName' in the variable group
           - name: MONGOHOST
             valueFrom:
               secretKeyRef:
