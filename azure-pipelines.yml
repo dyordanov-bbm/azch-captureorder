@@ -6,7 +6,7 @@ variables:
     value: 'containerRegistryConnection' # replace with container registry service connection name established during pipeline creation
   
   - name: imageRepository
-    value: 'captureorder' # replace with your own image name to match the name in the deployment.yaml
+    value: 'capture-order-api' # replace with your own image name to match the name in the deployment.yaml
 
   - name: tag
     value: '$(Build.BuildId)'
@@ -49,7 +49,7 @@ stages:
     pool:
       vmImage: ubuntu-latest
 
-    environment: 'aksworkshop' # name of the environment to target [env name.namespace]. This will pull in the Kubernetes service connection automatically
+    environment: 'aksworkshop.app1' # name of the environment to target [env name.namespace]. This will pull in the Kubernetes service connection automatically
 
     strategy:
       runOnce:
