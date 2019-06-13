@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
       matchLabels:
-        app: capture-order-api
+        app: order-capture-api
   template:
       metadata:
         labels:
@@ -15,7 +15,7 @@ spec:
         imagePullSecrets:
         - name: acr-auth
         containers:
-        - name: capture-order-api
+        - name: order-capture-api
           image: mdpacrpcc.azurecr.io/captureorder # replace with your own repository
           imagePullPolicy: Always
           readinessProbe:
