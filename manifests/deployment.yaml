@@ -12,6 +12,8 @@ spec:
         labels:
             app: capture-order-api
       spec:
+      imagePullSecrets:
+      - name: acr-auth
         containers:
         - name: capture-order-api
           image: mdpcarpcc.azurecr.io/captureorder # replace with your own repository
