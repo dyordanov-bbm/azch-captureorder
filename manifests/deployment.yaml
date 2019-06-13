@@ -16,7 +16,7 @@ spec:
         - name: acr-auth
         containers:
         - name: capture-order-api
-          image: mdpcarpcc.azurecr.io/captureorder # replace with your own repository
+          image: mdpacrpcc.azurecr.io/captureorder # replace with your own repository
           imagePullPolicy: Always
           readinessProbe:
             httpGet:
