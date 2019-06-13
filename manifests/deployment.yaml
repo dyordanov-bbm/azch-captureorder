@@ -28,8 +28,8 @@ spec:
               path: /healthz
           resources:
             requests:
-              memory: "1"
-              cpu: "150Mi"
+              memory: "150Mi"
+              cpu: "1"
             limits:
               memory: "200Mi"
               cpu: "1"
